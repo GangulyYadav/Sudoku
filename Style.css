@@ -1,0 +1,18 @@
+#div1{
+    background-image: url(./images/background/sudoku_background_image.jpg);
+}
+#div1>.row>div>h2{
+    margin-top: 150px;
+    /* margin-bottom: 150px; */
+    color: white;
+    text-align: center;
+}
+#div1>.row>div>button{
+    border-radius: 100%;
+    margin-left: 48%;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+#div1>.row>div>button:hover{
+    content: PLay Now;
+}
