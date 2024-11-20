@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spidey Sudoku</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+        }
+
+        .single-box {
+            width: 40px;
+            height: 40px;
+            background-color: rgb(14, 49, 49);
+            border: 1px solid black;
+            margin: 0px;
+            box-sizing: border-box;
+            
+        }
+
+        .single-box:focus{
+            /* border-radius: 0; */
+            /* border: 0; */
+            /* border:none; */
+            
+            background-color: red;
+            border: 1px solid black;
+            outline: none;
+        }
+
+        .main-box {
+            width: 100vw;
+            text-align: center;
+            /* display: flex; */
+        }
+        .container{
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-box " >
+
+        </div>
+    </div>
+
+
+    <script>
+        let a = document.getElementsByClassName('main-box')[0]
+        for (let i = 1; i <= 9; i++) {
+            let counter = 0
+            for (let j = 1; j <= 9; j++) {
+                let c = document.createElement('input')
+                c.type = 'text'
+                c.id = (i-1)*9+j;
+                for( let c = 1; c<=9; c++){
+                    
+                }
+
+                c.className = 'single-box'
+
+                if(j%3==0 && j!=9){
+                    c.style.borderRightColor="red"
+                    c.style.borderRightWidth="2px"
+                }
+                if(j==4 || j==7){
+                    // c.style.borderLeftColor="red"
+                    c.style.borderLeftWidth="0"
+                }
+                if(i%3==0 && i!=9){
+                    c.style.borderBottomColor="red"
+                    c.style.borderBottomWidth="2px"
+                }
+                if(i==4 || i==7){
+                    // c.style.borderLeftColor="red"
+                    c.style.borderTopWidth="0"
+                }
+                a.appendChild(c)
+                counter++
+            }
+            if (counter == 9) {
+                let b = document.createElement('br')
+                a.appendChild(b)
+            }
+        }
+        //    a.innerHTML = '<input type="text" id="" class="single-box">'
+    </script>
+
+</body>
+
+</html>
